@@ -52,6 +52,12 @@ body {
   width: 100%;
 }
 
+.route-loader {
+  padding: 40px;
+  text-align: center;
+  color: var(--black-soft);
+}
+
 @media (max-width: 768px) {
   /* No padding-block necessary here as sections handle their own spacing */
 }

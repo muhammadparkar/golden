@@ -1,0 +1,57 @@
+/* Trending */
+.trending {
+  padding: 100px 0;
+  background: #F4F3EF; /* Stone paper feel */
+}
+
+.trending__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.trending__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.trending__item {
+  cursor: pointer;
+}
+
+.trending__item img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin-bottom: 16px;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+
+.trending__item:hover img {
+  transform: scale(1.03);
+}
+
+.trending__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trending__info h4 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+}
+
+.trending__info span {
+  font-weight: 600;
+  color: var(--gold-champagne);
+}
+
+@media (max-width: 900px) {
+  .trending__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .trending { padding: 60px 0; }
+  .trending__grid { grid-template-columns: 1fr; }
+}

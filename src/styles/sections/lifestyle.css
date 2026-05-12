@@ -1,0 +1,71 @@
+/* Lifestyle */
+.lifestyle {
+  padding: 100px 0;
+  background: var(--soft-pink);
+}
+
+.lifestyle__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.lifestyle__image {
+  position: relative;
+}
+
+.lifestyle__image img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+
+.lifestyle__badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  padding: 12px 24px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.lifestyle__content h2 {
+  margin-bottom: 24px;
+}
+
+.lifestyle__content p {
+  font-size: 0.9375rem;
+  color: var(--black-soft);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.lifestyle__cta {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 14px 32px;
+  border: 1px solid var(--sage-green);
+  color: var(--sage-green);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.lifestyle__cta:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .lifestyle__grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 600px) {
+  .lifestyle { padding: 60px 0; }
+}
