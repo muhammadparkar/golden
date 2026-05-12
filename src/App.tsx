@@ -1,21 +1,31 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+import hero1 from './assets/hero-img/anthony-fomin-h7_SyoBhHF0-unsplash.jpg'
+import hero2 from './assets/hero-img/christina-dahl-XBTaVeWCQ-s-unsplash.jpg'
+import hero3 from './assets/hero-img/jessie-daniella-aiNU4cA4UzQ-unsplash.jpg'
+import hero4 from './assets/hero-img/lizzie-BqYoSL76lGo-unsplash.jpg'
+
 const heroSlides = [
   { 
     title: "Sculptural Rose Artistry", 
     subtitle: "Bespoke arrangements that transform space and mood.",
-    image: "/images/rose_hero_sculptural_1778579019983.png"
+    image: hero1
   },
   { 
     title: "The Art of the Bouquet", 
     subtitle: "Hand-tied masterpieces from the world's finest growers.",
-    image: "/images/rose_hero_bouquet_luxury_1778579035653.png"
+    image: hero2
   },
   { 
     title: "Infinite Rose Collection", 
     subtitle: "Real roses preserved to last for years in our signature cloche.",
-    image: "/images/rose_hero_infinite_gold_1778579053174.png"
+    image: hero3
+  },
+  { 
+    title: "Timeless Floral Design", 
+    subtitle: "Curated elegance for life's most meaningful moments.",
+    image: hero4
   }
 ]
 
@@ -132,15 +142,27 @@ function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [offset, setOffset] = useState(0)
 
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
     }, 6000)
+    
     const handleScroll = () => setOffset(window.scrollY)
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({
+        x: (e.clientX / window.innerWidth - 0.5) * 20,
+        y: (e.clientY / window.innerHeight - 0.5) * 20
+      })
+    }
+
     window.addEventListener('scroll', handleScroll)
+    window.addEventListener('mousemove', handleMouseMove)
     return () => {
       clearInterval(timer)
       window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('mousemove', handleMouseMove)
     }
   }, [])
 
@@ -159,15 +181,40 @@ function Hero() {
             <div className="hero__content">
               <div className="container">
                 <div className="hero__content-inner">
-                  <h1 className="fade-in-up">{slide.title}</h1>
-                  <p className="fade-in-up stagger-2">{slide.subtitle}</p>
-                  <a href="#products" className="hero__cta fade-in-up stagger-3">Explore Collection</a>
+                  <div className="hero__meta fade-in-up">
+                    <span className="hero__meta-label">Series 04</span>
+                    <span className="hero__meta-divider"></span>
+                    <span className="hero__meta-year">Est. 2011</span>
+                  </div>
+                  <span className="section-label hero__label fade-in-up stagger-1">Signature Collection</span>
+                  <h1 className="fade-in-up stagger-2">{slide.title}</h1>
+                  <p className="fade-in-up stagger-3">{slide.subtitle}</p>
+                  <a href="#products" className="hero__cta fade-in-up stagger-4">
+                    <span className="hero__cta-text">Explore Collection</span>
+                    <span className="hero__cta-shimmer"></span>
+                  </a>
+                  
+                  <div className="hero__usps fade-in-up stagger-5">
+                    <div className="hero__usp">
+                      <span className="hero__usp-dot"></span>
+                      <span>Ecuadorian Premium</span>
+                    </div>
+                    <div className="hero__usp">
+                      <span className="hero__usp-dot"></span>
+                      <span>Real Infinite Roses</span>
+                    </div>
+                    <div className="hero__usp">
+                      <span className="hero__usp-dot"></span>
+                      <span>Concierge Shipping</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
+      
       <div className="hero__dots">
         {heroSlides.map((_, i) => (
           <button 
@@ -176,6 +223,23 @@ function Hero() {
             onClick={() => setCurrentSlide(i)}
             aria-label={`Go to slide ${i + 1}`}
           />
+        ))}
+      </div>
+      
+      {/* Decorative Floating Petals */}
+      <div className="hero__petals">
+        {[...Array(6)].map((_, i) => (
+          <div 
+            key={i} 
+            className={`hero__petal hero__petal--${i + 1}`}
+            style={{ 
+              transform: `translate(${mousePos.x * (i + 1) * 0.2}px, ${mousePos.y * (i + 1) * 0.2}px) rotate(${mousePos.x * 2}deg)`
+            }}
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12,2C12,2 4,10 4,16C4,20.42 7.58,24 12,24C16.42,24 20,20.42 20,16C20,10 12,2 12,2Z" />
+            </svg>
+          </div>
         ))}
       </div>
     </section>

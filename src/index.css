@@ -1,19 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@200;300;400;500;600;700&display=swap');
 
 :root {
-  --black: #0A0A0A;
-  --black-soft: #1C1917;
-  --crimson: #991B1B;
-  --crimson-bright: #DC2626;
-  --merlot: #7F1D1D;
-  --gold: #CA8A04;
-  --gold-light: #D4A853;
-  --white: #FAFAF9;
-  --cream: #F5F5F4;
-  --beige: #E7E5E4;
+  --primary-pink: #F2425E;
+  --soft-pink: #F4E0ED;
+  --sage-green: #8BA870;
+  --olive-dark: #4B633A;
+  --gold-champagne: #B59A5D;
+  
+  --black: #162119;
+  --black-soft: #2C362F;
+  --stone: #44403C;
+  --white: #FFFFFF;
+  --off-white: #E9E3D6;
 
-  --font-display: 'Cinzel', serif;
-  --font-body: 'Josefin Sans', sans-serif;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Jost', sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
