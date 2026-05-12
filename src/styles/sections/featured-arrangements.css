@@ -151,21 +151,86 @@
   color: var(--black);
 }
 
+.featured__controls {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.featured__progress {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.featured__progress-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured__progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--black);
+  transition: width 0.6s var(--ease-out-expo);
+}
+
+.featured__progress-label {
+  font-size: 0.75rem;
+  font-family: var(--font-body);
+  color: var(--black-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.featured__count-current {
+  color: var(--black);
+  font-weight: 600;
+}
+
+.featured__count-sep {
+  opacity: 0.3;
+}
+
+.featured__count-total {
+  opacity: 0.5;
+}
+
+.featured__count-text {
+  margin-left: 12px;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+
 .featured__nav {
-  display: none;
+  display: flex;
+  gap: 12px;
 }
 
 .featured__nav-btn {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: transparent;
   color: var(--black);
-  transition: all 0.3s ease;
+  transition: all 0.4s var(--ease-out-expo);
   cursor: pointer;
 }
 
@@ -173,7 +238,13 @@
   background: var(--black);
   color: var(--white);
   border-color: var(--black);
+  transform: translateY(-2px);
 }
+
+.featured__nav-btn:active {
+  transform: translateY(0);
+}
+
 
 @media (max-width: 1200px) {
   .featured__container {
@@ -183,7 +254,7 @@
     padding: 60px 40px;
   }
   .featured__right {
-    padding: 40px 20px 80px 40px;
+    padding: 40px 30px 80px 30px; /* Symmetrical */
   }
   .featured__card {
     height: auto;
@@ -200,10 +271,46 @@
   .featured {
     padding: 60px 0;
   }
+  .featured__right {
+    padding: 40px 20px 60px 20px; /* Symmetrical */
+  }
+  .featured__card-wrapper {
+    padding-right: 0; /* Remove offset on mobile */
+  }
+  .featured__card {
+    padding: 24px;
+  }
   .featured__title {
     font-size: 2.5rem;
   }
+
   .featured__card-name {
     font-size: 1.5rem;
   }
+  .featured__progress {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .featured__progress-line {
+    width: 100%;
+    flex: none;
+  }
+  .featured__progress-label {
+    width: 100%;
+    gap: 6px;
+  }
+  .featured__count-text {
+    margin-left: auto;
+  }
+
+
+  .featured__nav {
+    display: none;
+  }
+  .featured__controls {
+    margin-top: 24px;
+  }
 }
+
+

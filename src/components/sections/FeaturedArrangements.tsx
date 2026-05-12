@@ -96,7 +96,16 @@ export default function FeaturedArrangements() {
                     style={{ width: `${((activeSlide + 1) / featuredArrangements.length) * 100}%` }}
                   />
                 </span>
-                <span className="featured__progress-label">Swipe to explore</span>
+                <span className="featured__progress-label">
+                  <span className="featured__count-current">
+                    {(activeSlide + 1).toString().padStart(2, '0')}
+                  </span>
+                  <span className="featured__count-sep">/</span>
+                  <span className="featured__count-total">
+                    {featuredArrangements.length.toString().padStart(2, '0')}
+                  </span>
+                  <span className="featured__count-text">Explore Collection</span>
+                </span>
               </div>
               <div className="featured__nav">
                 <button
