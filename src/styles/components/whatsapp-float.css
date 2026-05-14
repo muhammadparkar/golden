@@ -8,14 +8,47 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #25D366;
+  background: #25D366; /* Standard WhatsApp Green */
   border-radius: 50%;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-  transition: transform 0.3s var(--ease-out-expo);
-  z-index: 90;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+  transition: all 0.5s var(--ease-out-expo);
+  z-index: 1000;
+}
+
+.whatsapp-float svg {
+  width: 32px; /* Smaller relative to the 56px circle */
+  height: 32px;
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.45);
+}
+
+/* Subtle pulse animation */
+@keyframes whatsapp-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-float::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: whatsapp-pulse 2s infinite;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+  }
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
 }

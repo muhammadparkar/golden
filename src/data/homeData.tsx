@@ -140,10 +140,14 @@ export const featuredArrangements = [
 ]
 
 export const occasions = [
-  { name: 'Graduation', image: '/images/blog_studio_process_1778579181255.png' },
-  { name: 'Birthday', image: '/images/rose_hero_bouquet_luxury_1778579035653.png' },
+  { name: 'Graduation', image: '/images/occasion_graduation.png' },
+  { name: 'Birthday', image: '/images/occasion_birthday.png' },
   { name: 'New Born', image: '/images/occasion_newborn.png' },
   { name: 'Valentine', image: '/images/product_classic_red_1778579071178.png' },
+  { name: 'Hajj & Umrah', image: '/images/occasion_hajj_umrah.png' },
+  { name: 'Anniversary', image: '/images/occasion_anniversary_luxury.png' },
+  { name: 'Get Well Soon', image: '/images/occasion_get_well_soon.png' },
+  { name: 'Wedding', image: '/images/occasion_wedding.png' },
 ]
 
 export const giftIdeas = [
