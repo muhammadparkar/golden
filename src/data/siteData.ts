@@ -2,8 +2,8 @@ export const navLinks = [
   { label: 'Floral Essentials', href: '/floral-essentials' },
   { label: 'Cakes & Delights', href: '/cakes-and-delights' },
   { label: 'Green Heaven', href: '/green-heaven' },
-  { label: 'Gifts & Combos', href: '#products' },
-  { label: 'Events', href: '#products' },
+  { label: 'Gifts & Combos', href: '/gifts-and-combos' },
+  { label: 'Events', href: '/events' },
   { label: 'Contact', href: '#contact' },
 ]
 
