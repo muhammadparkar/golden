@@ -82,6 +82,7 @@ export default function FeaturedArrangements() {
                     <div className="featured__card-info">
                       <span className="featured__card-category">{item.category}</span>
                       <h3 className="featured__card-name">{item.name}</h3>
+                      <p className="featured__card-desc">{item.desc}</p>
                     </div>
                   </div>
                 </div>

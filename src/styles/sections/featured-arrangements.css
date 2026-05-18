@@ -151,6 +151,15 @@
   color: var(--black);
 }
 
+.featured__card-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--stone);
+  margin-top: 16px;
+  font-weight: 300;
+}
+
 .featured__controls {
   margin-top: 32px;
   display: flex;

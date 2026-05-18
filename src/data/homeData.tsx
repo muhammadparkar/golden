@@ -2,6 +2,9 @@ import hero1 from '../assets/hero-img/anthony-fomin-h7_SyoBhHF0-unsplash.jpg'
 import hero2 from '../assets/hero-img/christina-dahl-XBTaVeWCQ-s-unsplash.jpg'
 import hero3 from '../assets/hero-img/jessie-daniella-aiNU4cA4UzQ-unsplash.jpg'
 import hero4 from '../assets/hero-img/lizzie-BqYoSL76lGo-unsplash.jpg'
+import newTrendsImg from '../assets/bloom-archive/new-trends.png'
+import bestSellerImg from '../assets/bloom-archive/best-seller.png'
+import newProductsImg from '../assets/bloom-archive/new-products.png'
 
 export const heroSlides = [
   {
@@ -120,18 +123,21 @@ export const trustBadges = [
 export const featuredArrangements = [
   {
     category: 'Bestseller',
-    name: 'Classic Crimson Luxe',
-    image: '/images/product_classic_red_1778579071178.png',
+    name: 'Velvet Crimson Rose Grandeur',
+    image: bestSellerImg,
+    desc: 'An opulent dome of velvety red roses nestled in a vertically fluted glass vase with our signature GB monogram.',
   },
   {
     category: 'New Trends',
-    name: 'Sculptural Mixed Flora',
-    image: '/images/rose_hero_sculptural_1778579019983.png',
+    name: 'Blush & Magenta Rose Symphony',
+    image: newTrendsImg,
+    desc: 'A gorgeous mix of pink and magenta roses layered with delicate gypsophila, elegantly presented in a fluted glass vase.',
   },
   {
     category: 'New Products',
-    name: 'Golden Infinite Bloom',
-    image: '/images/rose_hero_infinite_gold_1778579053174.png',
+    name: 'Pastel Garden Elegance',
+    image: newProductsImg,
+    desc: 'An exquisite combination of cream roses, pastel blossoms, green hydrangeas, and an anthurium stem, beautifully wrapped with a satin ribbon.',
   },
 ]
 
