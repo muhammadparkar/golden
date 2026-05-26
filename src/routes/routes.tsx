@@ -7,6 +7,9 @@ const CakesDelights = lazy(() => import('../pages/CakesDelights'))
 const GreenHeaven = lazy(() => import('../pages/GreenHeaven'))
 const GiftsCombos = lazy(() => import('../pages/GiftsCombos'))
 const Events = lazy(() => import('../pages/Events'))
+const Contact = lazy(() => import('../pages/Contact'))
+const PrivacyPolicy = lazy(() => import('../pages/PrivacyPolicy'))
+const TermsOfService = lazy(() => import('../pages/TermsOfService'))
 
 export default function AppRoutes() {
   return (
@@ -17,6 +20,9 @@ export default function AppRoutes() {
       <Route path="/green-heaven" element={<GreenHeaven />} />
       <Route path="/gifts-and-combos" element={<GiftsCombos />} />
       <Route path="/events" element={<Events />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
       <Route path="*" element={<HomePage />} />
     </Routes>
   )

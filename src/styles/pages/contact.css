@@ -1,0 +1,552 @@
+/* 
+=========================================
+GOLDEN BOUQUET - CONTACT US REVAMP STYLES
+=========================================
+*/
+
+.contact-page {
+  padding-bottom: 120px;
+  min-height: 85vh;
+  background: var(--white);
+}
+
+.contact-page--no-hero {
+  padding-top: 90px;
+}
+
+@media (max-width: 1024px) {
+  .contact-page--no-hero {
+    padding-top: 120px;
+  }
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 40px;
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* --- Left Column: Info Cards --- */
+.contact-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 32px;
+  background: #FAF8F5; /* Soft, champagne-toned light background */
+  border: 1px solid rgba(22, 33, 25, 0.06);
+  transition: all 0.4s var(--ease-out-expo);
+  text-decoration: none;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  pointer-events: none;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.contact-card:hover {
+  background: var(--white);
+  box-shadow: 0 12px 30px rgba(181, 154, 93, 0.08);
+  border-color: rgba(181, 154, 93, 0.25);
+  transform: translateY(-2px);
+}
+
+.contact-card:hover::before {
+  inset: 6px;
+  border-color: rgba(181, 154, 93, 0.15);
+}
+
+.contact-card__icon-wrapper {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: var(--white);
+  border: 1px solid rgba(181, 154, 93, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  transition: all 0.4s var(--ease-out-expo);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.contact-card:hover .contact-card__icon-wrapper {
+  background: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+  box-shadow: 0 6px 15px rgba(181, 154, 93, 0.25);
+}
+
+.contact-card__content {
+  flex-grow: 1;
+}
+
+.contact-card__label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--sage-green);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.contact-card__title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: var(--black);
+  margin-bottom: 8px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.contact-card__value {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--black-soft);
+  opacity: 0.85;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.contact-card:hover .contact-card__value {
+  color: var(--gold);
+}
+
+.contact-card__action {
+  align-self: center;
+  color: var(--gold);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.contact-card:hover .contact-card__action {
+  transform: translateX(6px);
+}
+
+/* --- Right Column: Elegantly Crafted Inquiry Form --- */
+.contact-form-wrapper {
+  background: var(--white);
+  border: 1px solid rgba(181, 154, 93, 0.2);
+  padding: 48px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .contact-form-wrapper {
+    padding: 32px 20px;
+  }
+}
+
+.contact-form-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(181, 154, 93, 0.1);
+  pointer-events: none;
+}
+
+.contact-form-title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  color: var(--black);
+  margin-bottom: 12px;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-form-desc {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--black-soft);
+  opacity: 0.8;
+  margin-bottom: 36px;
+  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 576px) {
+  .contact-form-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.contact-input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-input-field {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid rgba(22, 33, 25, 0.15);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--black);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-input-label {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--black-soft);
+  opacity: 0.6;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Floating label states */
+.contact-input-field:focus ~ .contact-input-label,
+.contact-input-field:not(:placeholder-shown) ~ .contact-input-label {
+  top: -14px;
+  font-size: 0.75rem;
+  color: var(--gold);
+  opacity: 1;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.contact-input-field:focus {
+  border-color: var(--gold);
+}
+
+.contact-input-focus-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.contact-input-field:focus ~ .contact-input-focus-line {
+  width: 100%;
+}
+
+.contact-submit-btn {
+  align-self: flex-start;
+  background: var(--black);
+  color: var(--white);
+  padding: 14px 32px;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid var(--black);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-submit-btn:hover {
+  background: transparent;
+  color: var(--black);
+}
+
+.contact-submit-btn:hover svg {
+  transform: translateX(4px);
+}
+
+.contact-submit-btn svg {
+  transition: transform 0.3s ease;
+}
+
+/* Success Confirmation Panel */
+.contact-form-success {
+  background: #FAF8F5;
+  border: 1px solid rgba(181, 154, 93, 0.25);
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 0.6s var(--ease-out-expo) forwards;
+}
+
+.contact-form-success__icon {
+  width: 64px;
+  height: 64px;
+  background: var(--gold);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px auto;
+  box-shadow: 0 8px 24px rgba(181, 154, 93, 0.25);
+}
+
+.contact-form-success__title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  color: var(--black);
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.contact-form-success__desc {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--black-soft);
+  opacity: 0.85;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* --- Map Preview Frame --- */
+.contact-map-section {
+  margin-top: 80px;
+}
+
+.contact-map-container {
+  position: relative;
+  border: 1px solid rgba(181, 154, 93, 0.25);
+  padding: 16px;
+  background: var(--white);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+}
+
+.contact-map-iframe-wrapper {
+  position: relative;
+  aspect-ratio: 21/9;
+  width: 100%;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+@media (max-width: 991px) {
+  .contact-map-iframe-wrapper {
+    aspect-ratio: 16/9;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-map-iframe-wrapper {
+    aspect-ratio: 4/3;
+  }
+}
+
+.contact-map-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.contact-map-overlay {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  z-index: 10;
+  max-width: 320px;
+}
+
+@media (max-width: 576px) {
+  .contact-map-overlay {
+    position: static;
+    margin-top: 16px;
+    max-width: 100%;
+  }
+}
+
+.contact-map-card {
+  background: var(--white);
+  border: 1px solid rgba(181, 154, 93, 0.25);
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-map-card__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+
+.contact-map-card__text {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--black-soft);
+  opacity: 0.8;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.contact-map-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--black);
+  color: var(--white);
+  padding: 10px 20px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  border: 1px solid var(--black);
+  text-decoration: none;
+}
+
+.contact-map-card__btn:hover {
+  background: transparent;
+  color: var(--black);
+}
+
+.contact-map-card__btn svg {
+  transition: transform 0.3s ease;
+}
+
+.contact-map-card__btn:hover svg {
+  transform: translateY(-2px) translateX(2px);
+}
+
+/* --- Custom Dropdown UI Revamp --- */
+.contact-custom-dropdown-container {
+  position: relative;
+}
+
+.contact-custom-dropdown-trigger {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(22, 33, 25, 0.15);
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  min-height: 41px;
+  user-select: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-custom-dropdown-trigger.is-active {
+  border-color: var(--gold);
+}
+
+.contact-custom-dropdown-selected {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--black);
+}
+
+.contact-custom-dropdown-chevron {
+  color: var(--black-soft);
+  opacity: 0.6;
+  transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.contact-custom-dropdown-trigger.is-active .contact-custom-dropdown-chevron {
+  transform: rotate(180deg);
+  color: var(--gold);
+  opacity: 1;
+}
+
+/* Floating label triggers for custom dropdown */
+.contact-custom-dropdown-trigger.has-value ~ .contact-input-label,
+.contact-custom-dropdown-trigger.is-active ~ .contact-input-label {
+  top: -14px;
+  font-size: 0.75rem;
+  color: var(--gold);
+  opacity: 1;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.contact-custom-dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--white);
+  border: 1px solid rgba(181, 154, 93, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 8px 0;
+  list-style: none;
+  margin: 4px 0 0 0;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: dropdownFadeIn 0.3s var(--ease-out-expo) forwards;
+}
+
+@keyframes dropdownFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-custom-dropdown-option {
+  padding: 12px 20px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--black-soft);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact-custom-dropdown-option:hover {
+  background: #FAF8F5;
+  color: var(--gold);
+  padding-left: 26px;
+}
+
+.contact-custom-dropdown-option.selected {
+  background: rgba(181, 154, 93, 0.08);
+  color: var(--gold);
+  font-weight: 500;
+}

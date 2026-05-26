@@ -4,7 +4,7 @@ export const navLinks = [
   { label: 'Green Heaven', href: '/green-heaven' },
   { label: 'Gifts & Combos', href: '/gifts-and-combos' },
   { label: 'Events', href: '/events' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export const footerLinks = {
@@ -28,7 +28,7 @@ export const footerLinks = {
     { label: 'Returns', href: '#' },
   ],
   contact: [
-    { label: 'Contact Us', href: '#contact' },
+    { label: 'Contact Us', href: '/contact' },
     { label: 'WhatsApp', href: '#' },
     { label: 'info@golden-bouquet.com', href: 'mailto:info@golden-bouquet.com' },
     { label: '+974 7475 8555', href: 'tel:+97474758555' },

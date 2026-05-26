@@ -1,0 +1,84 @@
+/* 
+=========================================
+GOLDEN BOUQUET - LEGAL PAGES STYLES
+=========================================
+*/
+
+.legal-page {
+  padding-bottom: 120px;
+  min-height: 85vh;
+  background: var(--white);
+}
+
+.legal-page--no-hero {
+  padding-top: 90px;
+}
+
+@media (max-width: 1024px) {
+  .legal-page--no-hero {
+    padding-top: 120px;
+  }
+}
+
+.legal-content {
+  max-width: 900px;
+  margin: 40px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.legal-section {
+  border-bottom: 1px solid rgba(22, 33, 25, 0.08);
+  padding-bottom: 32px;
+}
+
+.legal-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.legal-section__title {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  color: var(--black);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.legal-section__text {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--black-soft);
+  opacity: 0.9;
+  margin-bottom: 16px;
+}
+
+.legal-section__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  padding-left: 8px;
+}
+
+.legal-section__list li {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--black-soft);
+  opacity: 0.9;
+  position: relative;
+  padding-left: 20px;
+}
+
+.legal-section__list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: var(--gold);
+  font-size: 0.7rem;
+}
