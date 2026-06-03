@@ -11,7 +11,7 @@ const careGuides = [
     id: 'roses',
     title: 'Signature Roses Preservation Guide',
     icon: '🌹',
-    content: 'To maximize the beauty of our premium luxury roses, trim the stems diagonally at a 45-degree angle before placing them in a clean vase. Use lukewarm water mixed with the provided flower food. Keep them away from direct sunlight, air currents, and ripening fruits which produce ethylene. Re-trim stems and change water every 2 days.'
+    content: 'To maximize the beauty of our premium luxury roses, trim the stems diagonally at a 45-degree angle before placing them in a clean vase. Use lukewarm water mixed with the provided flower food. Keep them away from direct sunlight, air currents, and ripening fruits which produce ethylene. Re-trim stems and change water every 1-2 days.'
   },
   {
     id: 'orchids',
