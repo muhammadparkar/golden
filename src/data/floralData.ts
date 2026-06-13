@@ -1,3 +1,5 @@
+import whiteRosesImg from '../assets/our-collection/white_roses.png'
+
 export const floralCategories = ['All', 'Roses', 'Lilies', 'Orchids', 'Tulips', 'Accessories']
 
 export const floralItems = [
@@ -11,9 +13,9 @@ export const floralItems = [
   {
     id: 2,
     name: 'White Roses',
-    category: 'Orchids',
-    desc: 'Elegant white orchids perfect for any interior.',
-    image: 'src/assets/our-collection/white_roses.png',
+    category: 'Roses',
+    desc: 'Elegant white roses perfect for any interior.',
+    image: whiteRosesImg,
   },
   {
     id: 3,

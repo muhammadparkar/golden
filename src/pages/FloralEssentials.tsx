@@ -113,10 +113,13 @@ export default function FloralEssentials() {
 
   // Get elegant exclusive badges for items
   const getItemBadge = (name: string) => {
-    if (name.includes('Gold')) return 'Collector\'s Choice'
-    if (name.includes('Classic') || name.includes('Red')) return 'Best Seller'
-    if (name.includes('Vase') || name.includes('Sculptural')) return 'Signature Style'
-    return null
+    const featuredBadges: Record<string, string> = {
+      'White Roses': 'Best Seller',
+      'Classic Red Roses': 'Collector\'s Choice',
+      'Mixed Spring Bouquet': 'Signature Style',
+    }
+
+    return featuredBadges[name] ?? null
   }
 
   return (
