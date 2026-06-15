@@ -73,11 +73,11 @@ export default function CakesDelights() {
                 >
                   {/* Image container with 4:3 landscape aspect ratio */}
                   <div className="editorial-card__image-container">
-                    <img 
-                      src={item.image} 
-                      alt={item.name} 
-                      className="editorial-card__image" 
-                      loading="lazy" 
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="editorial-card__image"
+                      loading="lazy"
                     />
                     {/* Elegant double gold border visible on hover */}
                     <div className="editorial-card__frame" />
