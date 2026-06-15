@@ -4,6 +4,20 @@ import MainLayout from '../layouts/MainLayout'
 import { floralCategories, floralItems } from '../data/floralData'
 import '../styles/pages/inner-page.css'
 import '../styles/pages/floral-essentials.css'
+import '../styles/pages/contact.css'
+
+const ribbonOptions = [
+  { value: 'Champagne Gold', label: 'Champagne Gold Satin' },
+  { value: 'Sage Green', label: 'Sage Green Velvet' },
+  { value: 'Velvet Pink', label: 'Velvet Rose Pink' },
+  { value: 'Classic Silk', label: 'Classic Silk Ivory' },
+]
+
+const baseOptions = [
+  { value: 'Crystal Vase', label: 'Classic Hand-Blown Crystal Vase' },
+  { value: 'Signature Cloche', label: 'Exclusive Preserved Glass Cloche' },
+  { value: 'Premium Box', label: 'Elegant Gold Embossed Hat Box' },
+]
 
 // Custom Care Guides Data
 const careGuides = [
@@ -40,7 +54,8 @@ export default function FloralEssentials() {
   const [activeCategory, setActiveCategory] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedItem, setSelectedItem] = useState<FloralItem | null>(null)
-  
+  const [openDropdown, setOpenDropdown] = useState<'ribbon' | 'base' | null>(null)
+
   // Custom commission form state inside product modal
   const [bookingState, setBookingState] = useState({
     ribbon: 'Champagne Gold',
@@ -81,6 +96,7 @@ export default function FloralEssentials() {
   // Open modal and reset modal commission state
   const handleOpenItem = (item: FloralItem) => {
     setSelectedItem(item)
+    setOpenDropdown(null)
     setBookingState({
       ribbon: 'Champagne Gold',
       base: 'Crystal Vase',
@@ -468,33 +484,70 @@ export default function FloralEssentials() {
                     
                     {!bookingState.submitted ? (
                       <form className="floral-booking-form" onSubmit={handleBookingSubmit}>
-                        <div className="floral-form-group">
-                          <label className="floral-form-label" htmlFor="ribbon-select">Luxury Ribbon Wrapping</label>
-                          <select 
-                            id="ribbon-select" 
-                            className="floral-form-select"
-                            value={bookingState.ribbon}
-                            onChange={(e) => setBookingState(prev => ({ ...prev, ribbon: e.target.value }))}
+                        <div className="floral-form-group contact-custom-dropdown-container">
+                          <label className="floral-form-label">Luxury Ribbon Wrapping</label>
+                          <div
+                            className={`contact-custom-dropdown-trigger has-value ${openDropdown === 'ribbon' ? 'is-active' : ''}`}
+                            onClick={() => setOpenDropdown(openDropdown === 'ribbon' ? null : 'ribbon')}
                           >
-                            <option value="Champagne Gold">Champagne Gold Satin</option>
-                            <option value="Sage Green">Sage Green Velvet</option>
-                            <option value="Velvet Pink">Velvet Rose Pink</option>
-                            <option value="Classic Silk">Classic Silk Ivory</option>
-                          </select>
+                            <span className="contact-custom-dropdown-selected">
+                              {ribbonOptions.find(opt => opt.value === bookingState.ribbon)?.label}
+                            </span>
+                            <span className="contact-custom-dropdown-chevron">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                              </svg>
+                            </span>
+                          </div>
+                          {openDropdown === 'ribbon' && (
+                            <ul className="contact-custom-dropdown-list">
+                              {ribbonOptions.map(option => (
+                                <li
+                                  key={option.value}
+                                  className={`contact-custom-dropdown-option ${bookingState.ribbon === option.value ? 'selected' : ''}`}
+                                  onClick={() => {
+                                    setBookingState(prev => ({ ...prev, ribbon: option.value }))
+                                    setOpenDropdown(null)
+                                  }}
+                                >
+                                  {option.label}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </div>
 
-                        <div className="floral-form-group">
-                          <label className="floral-form-label" htmlFor="base-select">Presentation Base</label>
-                          <select 
-                            id="base-select" 
-                            className="floral-form-select"
-                            value={bookingState.base}
-                            onChange={(e) => setBookingState(prev => ({ ...prev, base: e.target.value }))}
+                        <div className="floral-form-group contact-custom-dropdown-container">
+                          <label className="floral-form-label">Presentation Base</label>
+                          <div
+                            className={`contact-custom-dropdown-trigger has-value ${openDropdown === 'base' ? 'is-active' : ''}`}
+                            onClick={() => setOpenDropdown(openDropdown === 'base' ? null : 'base')}
                           >
-                            <option value="Crystal Vase">Classic Hand-Blown Crystal Vase</option>
-                            <option value="Signature Cloche">Exclusive Preserved Glass Cloche</option>
-                            <option value="Premium Box">Elegant Gold Embossed Hat Box</option>
-                          </select>
+                            <span className="contact-custom-dropdown-selected">
+                              {baseOptions.find(opt => opt.value === bookingState.base)?.label}
+                            </span>
+                            <span className="contact-custom-dropdown-chevron">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                              </svg>
+                            </span>
+                          </div>
+                          {openDropdown === 'base' && (
+                            <ul className="contact-custom-dropdown-list">
+                              {baseOptions.map(option => (
+                                <li
+                                  key={option.value}
+                                  className={`contact-custom-dropdown-option ${bookingState.base === option.value ? 'selected' : ''}`}
+                                  onClick={() => {
+                                    setBookingState(prev => ({ ...prev, base: option.value }))
+                                    setOpenDropdown(null)
+                                  }}
+                                >
+                                  {option.label}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </div>
 
                         <div className="floral-form-group">
