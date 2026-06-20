@@ -71,6 +71,25 @@ export default function CakesDelights() {
       submitted: true,
       reference: randomRef
     }))
+
+    const subject = encodeURIComponent(`Bespoke Cakes & Delights Inquiry: ${selectedItem?.name} (${randomRef})`)
+    const body = encodeURIComponent(
+      `Hello Golden Bouquet Concierge,\n\n` +
+      `I would like to inquire about ordering the following custom cake:\n` +
+      `- Cake Name: ${selectedItem?.name}\n` +
+      `- Size: ${bookingState.size}\n` +
+      `- Frosting: ${bookingState.frosting}\n` +
+      `- Inquiry Reference: ${randomRef}\n\n` +
+      `Cake Topper Message:\n` +
+      `"${bookingState.message || 'None provided'}"\n\n` +
+      `--- Additional Customer Notes ---\n` +
+      `[Write your additional comments here]\n\n` +
+      `Thank you.`
+    )
+
+    setTimeout(() => {
+      window.location.href = `mailto:info@golden-bouquet.com?subject=${subject}&body=${body}`
+    }, 800)
   }
 
   return (

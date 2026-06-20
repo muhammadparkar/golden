@@ -68,6 +68,25 @@ export default function GreenHeaven() {
       submitted: true,
       reference: randomRef
     }))
+
+    const subject = encodeURIComponent(`Green Heaven Plant Inquiry: ${selectedItem?.name} (${randomRef})`)
+    const body = encodeURIComponent(
+      `Hello Golden Bouquet Concierge,\n\n` +
+      `I would like to inquire about ordering the following botanical/plant item:\n` +
+      `- Plant Name: ${selectedItem?.name}\n` +
+      `- Pot Size Selection: ${bookingState.potSize}\n` +
+      `- Pot Style Selection: ${bookingState.potType}\n` +
+      `- Inquiry Reference: ${randomRef}\n\n` +
+      `Special Requests or Placement Notes:\n` +
+      `"${bookingState.message || 'None provided'}"\n\n` +
+      `--- Additional Customer Notes ---\n` +
+      `[Write your additional comments here]\n\n` +
+      `Thank you.`
+    )
+
+    setTimeout(() => {
+      window.location.href = `mailto:info@golden-bouquet.com?subject=${subject}&body=${body}`
+    }, 800)
   }
 
   return (

@@ -39,8 +39,26 @@ export default function Contact() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    // Simulated smooth form submission
     setIsSubmitted(true)
+
+    const subject = encodeURIComponent(`Contact Inquiry: ${formData.inquiryType || 'General Inquiries'} from ${formData.name}`)
+    const body = encodeURIComponent(
+      `Hello Golden Bouquet Concierge,\n\n` +
+      `You have received a new inquiry from the contact form:\n` +
+      `- Client Name: ${formData.name}\n` +
+      `- Email Address: ${formData.email}\n` +
+      `- Phone Number: ${formData.phone || 'Not provided'}\n` +
+      `- Inquiry Type: ${formData.inquiryType || 'General Inquiries'}\n\n` +
+      `Message Details:\n` +
+      `"${formData.message}"\n\n` +
+      `--- Additional Customer Notes ---\n` +
+      `[Write your additional comments here]\n\n` +
+      `Thank you.`
+    )
+
+    setTimeout(() => {
+      window.location.href = `mailto:info@golden-bouquet.com?subject=${subject}&body=${body}`
+    }, 800)
   }
 
   return (

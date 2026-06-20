@@ -73,6 +73,25 @@ export default function GiftsCombos() {
       submitted: true,
       reference: randomRef
     }))
+
+    const subject = encodeURIComponent(`Bespoke Gift Combo Inquiry: ${selectedItem?.name} (${randomRef})`)
+    const body = encodeURIComponent(
+      `Hello Golden Bouquet Concierge,\n\n` +
+      `I would like to inquire about booking the following gift combo:\n` +
+      `- Combo Name: ${selectedItem?.name}\n` +
+      `- Ribbon Customization: ${bookingState.ribbon}\n` +
+      `- Box Presentation: ${bookingState.box}\n` +
+      `- Inquiry Reference: ${randomRef}\n\n` +
+      `Greeting Card Calligraphy:\n` +
+      `"${bookingState.message || 'None provided'}"\n\n` +
+      `--- Additional Customer Notes ---\n` +
+      `[Write your additional comments here]\n\n` +
+      `Thank you.`
+    )
+
+    setTimeout(() => {
+      window.location.href = `mailto:info@golden-bouquet.com?subject=${subject}&body=${body}`
+    }, 800)
   }
 
   return (

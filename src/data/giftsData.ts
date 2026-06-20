@@ -41,6 +41,6 @@ export const giftsItems = [
     name: 'Surprise Party Pack',
     category: 'Flower & Balloon',
     desc: 'Giant balloon bouquet with a handheld rose arrangement.',
-    image: '/images/gift-combos/surprise-party-pack.png',
+    image: '/images/gift-combos/surprise-party-pack.jpg',
   },
 ]

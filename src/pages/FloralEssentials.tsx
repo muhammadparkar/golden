@@ -115,6 +115,25 @@ export default function FloralEssentials() {
       submitted: true,
       reference: randomRef
     }))
+
+    const subject = encodeURIComponent(`Bespoke Order Inquiry: ${selectedItem?.name} (${randomRef})`)
+    const body = encodeURIComponent(
+      `Hello Golden Bouquet Concierge,\n\n` +
+      `I would like to place a bespoke order inquiry for:\n` +
+      `- Item Name: ${selectedItem?.name}\n` +
+      `- Ribbon Customization: ${bookingState.ribbon}\n` +
+      `- Presentation Base: ${bookingState.base}\n` +
+      `- Inquiry Reference: ${randomRef}\n\n` +
+      `Calligraphy Message:\n` +
+      `"${bookingState.message || 'None provided'}"\n\n` +
+      `--- Additional Customer Notes ---\n` +
+      `[Write your additional comments here]\n\n` +
+      `Thank you.`
+    )
+
+    setTimeout(() => {
+      window.location.href = `mailto:info@golden-bouquet.com?subject=${subject}&body=${body}`
+    }, 800)
   }
 
   // Handle Bouquet Studio form submit
@@ -125,6 +144,23 @@ export default function FloralEssentials() {
       submitted: true,
       reference: randomRef
     }))
+
+    const subject = encodeURIComponent(`Bespoke Studio Customizer: Bouquet Design (${randomRef})`)
+    const body = encodeURIComponent(
+      `Hello Golden Bouquet Concierge,\n\n` +
+      `I have customized a signature bouquet layout in the Bouquet Studio:\n` +
+      `- Flower Base: ${studioState.flowerBase}\n` +
+      `- Wrap Style: ${studioState.wrapStyle}\n` +
+      `- Premium Accent: ${studioState.accents}\n` +
+      `- Design Reference: ${randomRef}\n\n` +
+      `--- Additional Customer Notes ---\n` +
+      `[Write your additional comments here]\n\n` +
+      `Thank you.`
+    )
+
+    setTimeout(() => {
+      window.location.href = `mailto:info@golden-bouquet.com?subject=${subject}&body=${body}`
+    }, 800)
   }
 
   // Get elegant exclusive badges for items
