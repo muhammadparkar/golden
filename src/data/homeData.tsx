@@ -42,7 +42,7 @@ export const products = [
   {
     name: 'Classic Red',
     desc: '24 premium Ecuadorian roses in signature wrap',
-    image: '/images/product_classic_red_1778579071178.png',
+    image: '/images/floral/classic-red-roses.png',
   },
   {
     name: 'White Roses',
@@ -52,25 +52,25 @@ export const products = [
   {
     name: 'Sculptural Mixed',
     desc: 'Architectural rose arrangement',
-    image: '/images/product_sculptural_mixed_1778579101127.png',
+    image: '/images/floral/mixed-spring-bouquet.png',
   },
   {
     name: 'The Single Rose',
     desc: 'Elegant long-stemmed statement piece',
-    image: '/images/product_handheld_rose_1778579149365.png',
+    image: '/images/floral/the-single-rose.png',
   },
 ]
 
 export const trendingProducts = [
-  { name: 'Royal Bouquet', image: '/images/rose_hero_bouquet_luxury_1778579035653.png' },
-  { name: 'Gallery Cloche', image: '/images/rose_hero_infinite_gold_1778579053174.png' },
+  { name: 'Royal Bouquet', image: '/images/floral/royal-bouquet.png' },
+  { name: 'Gallery Cloche', image: '/images/floral/golden-infinite-rose.png' },
   { name: 'Events', image: eventsImg },
   { name: 'Infinite Box', image: infiniteBoxesImg },
 ]
 
 export const blogPosts = [
-  { title: 'The Anatomy of a Rose', date: 'December 2024', image: '/images/blog_macro_petals_1778579165508.png' },
-  { title: 'In the Studio: Curating Form', date: 'November 2024', image: '/images/blog_studio_process_1778579181255.png' },
+  { title: 'The Anatomy of a Rose', date: 'December 2024', image: '/images/blog/anatomy-of-a-rose.png' },
+  { title: 'In the Studio: Curating Form', date: 'November 2024', image: '/images/blog/in-the-studio-curating-form.png' },
   { title: 'Luxury Corporate Presence', date: 'October 2024', image: corporateImg },
 ]
 
@@ -151,14 +151,14 @@ export const featuredArrangements = [
 ]
 
 export const occasions = [
-  { name: 'Graduation', image: '/images/occasion_graduation.png' },
-  { name: 'Birthday', image: '/images/occasion_birthday.png' },
-  { name: 'New Born', image: '/images/occasion_newborn.png' },
-  { name: 'Valentine', image: '/images/product_classic_red_1778579071178.png' },
-  { name: 'Hajj & Umrah', image: '/images/occasion_hajj_umrah.png' },
-  { name: 'Anniversary', image: '/images/occasion_anniversary_luxury.png' },
-  { name: 'Get Well Soon', image: '/images/occasion_get_well_soon.png' },
-  { name: 'Wedding', image: '/images/occasion_wedding.png' },
+  { name: 'Graduation', image: '/images/occasions/graduation.png' },
+  { name: 'Birthday', image: '/images/occasions/birthday.png' },
+  { name: 'New Born', image: '/images/occasions/newborn.png' },
+  { name: 'Valentine', image: '/images/floral/classic-red-roses.png' },
+  { name: 'Hajj & Umrah', image: '/images/occasions/hajj-umrah.png' },
+  { name: 'Anniversary', image: '/images/occasions/anniversary-luxury.png' },
+  { name: 'Get Well Soon', image: '/images/occasions/get-well-soon.png' },
+  { name: 'Wedding', image: '/images/occasions/wedding.png' },
 ]
 
 export const giftIdeas = [

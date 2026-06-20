@@ -64,11 +64,11 @@ export default function Footer() {
         </div>
         <div className="footer__bottom">
           <p>© {new Date().getFullYear()} <span className="footer__brand-text--small">Golden Bouquet</span>. All rights reserved.</p>
+          <p className="footer__credit">Designed and developed by <a href="https://qadmastechnologies.com/" target="_blank" rel="noopener noreferrer">Qadmas Technologies</a></p>
           <div className="footer__legal">
             <Link to="/privacy-policy">Privacy Policy</Link>
             <Link to="/terms-of-service">Terms of Service</Link>
           </div>
-          <p className="footer__credit">Designed and developed by <a href="https://qadmastechnologies.com/" target="_blank" rel="noopener noreferrer">Qadmas Technologies</a></p>
         </div>
       </div>
     </footer>
