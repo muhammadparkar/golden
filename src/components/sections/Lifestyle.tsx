@@ -18,7 +18,7 @@ export default function Lifestyle() {
       <div className="container">
         <div className="lifestyle__grid">
           <div className="lifestyle__image fade-in">
-            <img src="/images/lifestyle_rose_interior_1778579122104.png" alt="Luxury rose arrangement in interior" />
+            <img src="/images/floral/tulip-harmony.png" alt="Luxury rose arrangement in interior" />
             <div className="lifestyle__badge">Signature Presence</div>
           </div>
           <div className="lifestyle__content">
